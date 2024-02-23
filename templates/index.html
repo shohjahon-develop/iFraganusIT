@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js">
+    <title>IFRAGANUS ONLINE DARS</title>
+    <link rel="shorcut icon" href="{% static 'img/Снимок экрана 2024-01-17 154148.png' %}">
+</head>
+<body>
+    <navbar class="navbar">
+        <div class="container">
+            <nav class="navbar navbar-dark fixed-top">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img class="" src="{% static 'img/Снимок экрана 2024-01-17 154148.png' %}" alt="">
+                    <span class="text-black">
+                      Ifraganus IT
+                    </span>
+                  </a>
+
+                  <ul class="navbar-links d-lg-flex d-none gap-4">
+                    <div class="dropdown">
+                            <button class="btn dropdown-toggle text-black mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Kurslar
+                            </button>
+
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">FrontEnd</a></li>
+                              <li><a class="dropdown-item" href="#">Backend</a></li>
+                              <li><a class="dropdown-item" href="#">SMM</a></li>
+                            </ul>
+                    </div>
+
+                    <li class="list-unstyled mt-3"><a class="navbar-link__a text-decoration-none text-black" href="">Ro'yhatdan O'tish</a></li>
+                  </ul>
+
+                  <div class="navbar-input d-lg-flex d-flex gap-2 d-none">
+                    <span class="text-black mt-3">
+                        Bog'lanish uchun telefon raqam:
+                    </span>
+
+                    <button class="glow-on-hover mt-1 d-flex justify-content-center align-items-center gap-3" type="button"><img src="{% static 'img/contact-logo.png' %}" alt="">+998 91-735-45-55 </button>
+                  </div>
+
+                  <button class="navbar-toggler d-lg-none d-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">iFraganus IT & Kids</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Bog'lanish uchun raqam:</a>
+                          <button class="glow-on-hover2  mt-1 d-flex justify-content-center align-items-center gap-3" type="button"><img src="img/contact-logo.png" alt="">+998 91-735-45-55 </button>
+
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"></a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Kurslar
+                          </a>
+
+                          <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">FrontEnd</a></li>
+                            <li><a class="dropdown-item" href="#">BackEnd</a></li>
+                            <li><a class="dropdown-item" href="#">SMM</a></li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Bizning kurslar</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </nav>
+        </div>
+    </navbar>
+
+    <div class="corusel-all position-relative mt-5">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            {% for Carusel in carusel %}
+          <div class="carousel-item active">
+            <img src={{Carusel.img.url}} class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{Carusel.name}}</h5>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="konsultatsiya">
+      <div class="container">
+        <div class="card-text-center text-light">
+          <h2 class="text-md-start text-center">Ifraganus IT markaz bu-</h2>
+        </div>
+
+        <div class="row row-gap-4 mt-5 justify-content-center">
+          {% for Malumot in malumots %}
+          <div class="col-lg-4 col-md-6 col-8">
+            <div class="card">
+              <img src={{Malumot.img.url}} class="card-img-top" alt="...">
+
+              <div class="card-body">
+                <h4>{{Malumot.name}}:</h4>
+                <p class="card-text">{{Malumot.bio}}</p>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+          <div class="col-12 mt-4">
+            <div class="row">
+              <div class="col-lg-6 mt-4">
+                <div class="card-2">
+                  <div class="card-body">
+                    <h4>Bepul konsultatsiya haqida:</h4>
+                    <p class="card-text">Bepul konsultatsiya olish uchun bu yerga murojat qiling.</p>
+                    <p class="card-text">Bog'lanish uchun malumotlaringgizni kiriting.</p>
+
+                    <div class="konsultatsiya-button d-flex justify-content-end mt-5">
+                      <button class="card-bt d-flex justify-content-center align-items-center">Konsultatsiya <div class="d-lg-flex d-none"><span class="material-symbols-outlined mt-1">
+                        arrow_forward
+                        </span>
+                      </div>
+
+                        <div class="d-lg-none d-flex">
+                          <span class="material-symbols-outlined mt-1">arrow_downward</span>
+                        </div> 
+                      </button>
+                    </div>
+
+                    <div class="crad-png-bg">
+                      <img src="{% static 'img/ifraganus-logo-bg-remover.png' %}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mt-4">
+                <form method="post">{% csrf_token %}
+                <div class="card-2">
+                  <div class="card-body">
+                    <h4>Bepul konsultatsiya</h4>
+                    <p class="card-text mt-3">Ismingizni kiriting</p>
+
+                    <input class="form-control card-input" name="name" aria-label="default input example" placeholder="Ismingizni kiriting">
+
+                    <div class="mt-3 col-lg-12">
+                      <div class="col-lg-12">
+                        <p class="card-text">Telefon nomeringgizni kiriting:</p>
+                        <div class="form-group mt-2 ">
+                            <span class="border-end country-code px-2 text-dark"><img src="{% static './home-page/img/free-icon-world-flag-14009730.png' %}" alt=""> +998 </span>
+                            <input name="phonenumber" class="tel-number form-control" id="ec-mobile-number" aria-describedby="emailHelp" placeholder="00 000 00 00">
+                        </div>
+
+                        <button class="card-bt-click mt-4">Sorov Yuborish</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="container mt-5">
+      <div class="card-text text-light">
+        <h3 class="text-md-start text-center">Ifraganus IT yonalishlari-</h3>
+      </div>
+    </div>
+
+    <div class="yonalishlar text-center mt-5">
+      <div class="row justify-content-center yonalish-box-all">
+        {% for Yonalish in yonalish %}
+        <div class="col-xl-3 col-lg-5 col-md-6 col-12 mt-4 yonalish-box">
+          <img src={{Yonalish.img.url}} alt="">
+
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="card-text text-light">
+        <h3 class="text-md-start text-center">Ifraganus Kids yonalishlari-</h3>
+      </div>
+    </div>
+
+    <div class="yonalishlar text-center mt-5">
+      <div class="row justify-content-center yonalish-box-all">
+        {% for Kids in kids %}
+        <div class="col-xl-3 col-lg-5 col-md-6 col-12 mt-4 yonalish-box">
+          <img src={{Kids.img.url}} alt="">
+
+        </div>
+
+         {% endfor %}
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="card-text text-light">
+        <h3 class="text-md-start text-center">Ifraganus Kids o'quvchilari-</h3>
+      </div>
+
+      <marquee class="marque mt-5">
+      {% for Student in student %}
+        <img src={{Student.img.url}} alt="">
+      {% endfor %}
+      </marquee>
+    </div>
+
+    <div class="container mt-5">
+      <div class="card-text text-light">
+        <h3 class="text-md-start text-center">Ifraganus IT & Kids Academy joylashuvi-</h3>
+      </div>
+    </div>
+    
+    <div class="container mt-5">
+      <div class="xarita">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1226.9523627338383!2d71.21397107168039!3d40.45864748267349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb035f19d19573%3A0xa47266bc196fa8a6!2siFraganus%20IT%20%26%20Design%20Group!5e1!3m2!1sru!2s!4v1708525427905!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="container justify-content-center text-light text-center mt-5">
+      <h2>Agar sizga bizning Ifraganus IT & Kids Academy yoqgan bo'lsa bemalol bog'lanib o'zingizni fikringiz yoki o'qimoqchi bo'lgan yonalishgizi bildirishingiz mumkin etibor uchun rahmat!</h2>
+    </div>
+
+    <div class="footer">
+      <div class="container-fluid">
+        <nav class="navbar footer-navbar navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand footer-brend d-flex align-items-center" href="#">
+              <img src="{% static 'img/Снимок экрана 2024-01-17 154148.png' %}" alt="">
+
+              <span class="mt-2 text-black">
+                <h4>Ifraganus IT & Kids Academy</h4>
+              </span>
+            </a>
+
+            <div class="footer-links d-flex gap-5 align-items-center">
+              <div>
+                <h5>Bizning kanallarimiz:</h5>
+              </div>
+
+              <div class="footer-icon d-flex gap-3">
+                <a class="text-decoration-none" href="https://t.me/ifraganusKidsIT">
+                  <img src="{% static 'img/telegram.png' %}" alt="">
+                </a>
+
+                <a href="www.youtube.com/@iFraganusITKidsAcademy-id7p">
+                  <img src="{% static 'img/youtube.png' %}" alt="">
+                </a>
+
+                <a href="https://ifraganus.netlify.app/">
+                  <img src="{% static 'img/google.png' %}" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    
+
+</body>
+<script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'app.js' %}"></script>
+</html>
